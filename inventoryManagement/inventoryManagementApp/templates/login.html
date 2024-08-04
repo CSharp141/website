@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load bootstrap5 %}
+        {% load static %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% load crispy_forms_tags %}
+        <style>
+            .full-height {
+                height: 100vh;
+            }
+            .centered-box {
+                max-width: 400px;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid full-height d-flex align-items-center justify-content-center">
+            <div class="bg-white centered-box">
+                <form method="post">
+                    {% csrf_token %}
+                
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+    
+                    {{ form|crispy }}
+                    
+                    <div class="form-group d-flex justify-content-between">
+                        <button type="submit" class="btn btn-primary w-100 mb-2">Login</button>
+                        <a href="{% url 'signup' %}" class="w-100"><button type="button" class="btn btn-secondary w-100 mb-2">Register</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

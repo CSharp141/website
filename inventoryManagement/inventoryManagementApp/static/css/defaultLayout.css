@@ -1,0 +1,52 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.top-bar {
+    height: 60px;
+    background-color: #343a40;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.sidebar {
+    height: calc(100% - 60px);
+    width: 80px;
+    position: fixed;
+    top: 60px;
+    background-color: #343a40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.sidebar a:hover {
+    background-color: #495057;
+}
+.content {
+    margin-left: 80px;
+    margin-top: 60px;
+    padding: 20px;
+}
+.icon {
+    width: 2em;
+    height: 2em;
+    fill: white;
+}
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+

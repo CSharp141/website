@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/defaultLayout.css' %}">
+    <style>
+        .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        }
+        .card .title {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card .value {
+            font-size: 1.5em;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="top-bar d-flex justify-content-between align-items-center px-3 py-2 bg-dark text-white">
+        <div class="logo">
+            Balloons and Gas
+        </div>
+        <div class="nav-links">
+            <a href="#" class="text-white me-3">Dashboard</a>
+        </div>
+    </div>
+    <div class="d-flex">
+        <div class="sidebar bg-dark d-flex flex-column align-items-center py-3">
+            <a href="#" title="Dashboard" class="text-white my-2">
+                <img src="{% static 'icons/dashboard-monitor.svg' %}" alt="Dashboard Icon" class="icon">
+            </a>
+            <a href="#" title="Past Sales" class="text-white my-2">
+                <img src="{% static 'icons/shopping-cart.svg' %}" alt="New Sale Icon" class="icon">
+            </a>
+            <a href="#" title="New Sales" class="text-white my-2">
+                <img src="{% static 'icons/previous.svg' %}" alt="Past Sales Icon" class="icon">
+            </a>
+            <a href="{% url 'inventory' %}" title="Inventory" class="text-white my-2">
+                <img src="{% static 'icons/inventory.svg' %}" alt="Inventory Icon" class="icon">
+            </a>
+            <a href="#" title="Profile" class="text-white my-2">
+                <img src="{% static 'icons/users.svg' %}" alt="Profile Icon" class="icon">
+            </a>
+            <a href="#" title="Settings" class="text-white my-2">
+                <img src="{% static 'icons/settings.svg' %}" alt="Settings Icon" class="icon">
+            </a>
+        </div>
+        <div class="content flex-grow-1 p-4">
+            <div class="dashboard-header">
+                <div class="card">
+                    <div class="title">Total Sales</div>
+                    <div class="value">+ 30,000</div>
+                </div>
+                <div class="card">
+                    <div class="title">Number of Sales</div>
+                    <div class="value">+ 30,000</div>
+                </div>
+                <div class="card">
+                    <div class="title">Purchase</div>
+                    <div class="value">+ 30,000</div>
+                </div>
+                <div class="card">
+                    <div class="title">Income</div>
+                    <div class="value">+ 30,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

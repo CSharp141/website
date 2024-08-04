@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load crispy_forms_tags %}
+        {% load static %}
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <style>
+            .full-height {
+                height: 100vh;
+            }
+            .centered-box {
+                max-width: 400px;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid full-height d-flex align-items-center justify-content-center">
+            <div class="bg-white centered-box">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+    
+                    {{ form|crispy }}
+                    
+                    <div class="form-group d-flex flex-column">
+                        <button type="submit" class="btn btn-primary w-100 mb-2">Create Account</button>
+                        <a href="{% url 'login' %}" class="btn btn-secondary w-100 mb-2">Return to Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
